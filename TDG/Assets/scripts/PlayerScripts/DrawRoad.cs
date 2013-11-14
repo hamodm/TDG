@@ -14,11 +14,8 @@ public class DrawRoad : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-<<<<<<< HEAD
         terrainWidth = Terrain.activeTerrain.terrainData.size.x;
         terrainLength = Terrain.activeTerrain.terrainData.size.z;
-=======
->>>>>>> 20b2cbc5d3654f0e7c8f20db6f5518f3fe14531f
 	}
 	
 	// Update is called once per frame
@@ -78,7 +75,6 @@ public class DrawRoad : MonoBehaviour
 
     public void TemporarilyAddVertex(Vector3 destination)
     {
-<<<<<<< HEAD
         if (InBounds(destination))
         {
             destination.y = 0.1f;
@@ -87,20 +83,12 @@ public class DrawRoad : MonoBehaviour
         }
         else
             line.SetVertexCount(counter);
-=======
-        destination.y = 0.1f;
-        line.SetVertexCount(counter + 1);
-        line.SetPosition(counter, destination);
->>>>>>> 20b2cbc5d3654f0e7c8f20db6f5518f3fe14531f
     }
 	
 	public void AddRoadToPlayerManager(PlayerManager playerManager)
 	{
 		playerManager.roads.Add(vertices);
-<<<<<<< HEAD
         playerManager.roadLines.Add(line);
-=======
->>>>>>> 20b2cbc5d3654f0e7c8f20db6f5518f3fe14531f
 	}
 	
 	public Vector3 LastVertex()

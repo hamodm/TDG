@@ -54,11 +54,7 @@ public class PlaceRoad : MonoBehaviour {
     //makes sure that a location is on the map
     bool InBounds(Vector3 position)
     {
-<<<<<<< HEAD
         if (position.x > 0 && position.x < terrainWidth && position.z > 0 && position.z < terrainLength)
-=======
-        if (position.x >= 0 && position.x <= terrainWidth && position.z >= 0 && position.z <= terrainLength)
->>>>>>> 20b2cbc5d3654f0e7c8f20db6f5518f3fe14531f
             return true;
         return false;
     }
@@ -72,20 +68,12 @@ public class PlaceRoad : MonoBehaviour {
             drawRoad.SetOrigin(playerManager.castlePosition);
             isInitialized = true;
         }
-<<<<<<< HEAD
         else if(isInitialized && Input.GetMouseButtonDown(0) && InBounds(GetMousePosition()))
-=======
-        else if(isInitialized && Input.GetMouseButtonDown(0) && InBounds(mousePosition))
->>>>>>> 20b2cbc5d3654f0e7c8f20db6f5518f3fe14531f
         {
 			mousePosition = FindTile(GetMousePosition());
             drawRoad.AddVertex(mousePosition);
         }
-<<<<<<< HEAD
         else if (isInitialized && InBounds(GetMousePosition()))
-=======
-        else if (isInitialized && InBounds(mousePosition))
->>>>>>> 20b2cbc5d3654f0e7c8f20db6f5518f3fe14531f
         {
 			mousePosition = FindTile(GetMousePosition());
             drawRoad.TemporarilyAddVertex(mousePosition);
@@ -107,20 +95,10 @@ public class PlaceRoad : MonoBehaviour {
     {
         if (GUI.Button(new Rect(0, 30, 100, 20), "Place Road"))
         {
-<<<<<<< HEAD
             isPlacing = true;
             newRoad = Network.Instantiate(road, new Vector3(0,0,0), Quaternion.identity, 0) as GameObject;
 			newRoad.transform.parent = gameObject.transform;
             drawRoad = newRoad.GetComponent<DrawRoad>();
-=======
-            if (playerManager.hasPlacedCastle)
-            {
-                isPlacing = true;
-                newRoad = Network.Instantiate(road, new Vector3(0,0,0), Quaternion.identity, 0) as GameObject;
-				newRoad.transform.parent = gameObject.transform;
-                drawRoad = newRoad.GetComponent<DrawRoad>();
-            }
->>>>>>> 20b2cbc5d3654f0e7c8f20db6f5518f3fe14531f
         }
     }
 
